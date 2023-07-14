@@ -21,8 +21,8 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'io.prometheus:prometheus-metrics-exposition-formats:0.16.1-SNAPSHOT' // <- TODO: should come with the registry.
-	runtimeOnly 'io.micrometer:micrometer-registry-prometheus_new'
+	runtimeOnly 'io.micrometer:micrometer-registry-prometheus-native'
+	//runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
