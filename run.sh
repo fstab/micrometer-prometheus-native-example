@@ -28,7 +28,7 @@ for mode in classic native ; do
 		curl -s http://localhost:8080
 	done
 
-	curl -s http://localhost:8080/actuator/prometheus?debug=openmetrics > $dir/01-openmetrics-$mode.txt
+	curl -s -H 'Accept: application/openmetrics-text' http://localhost:8080/actuator/prometheus > $dir/01-openmetrics-$mode.txt
 	echo "Metrics written to $dir/01-openmetrics-$mode.txt"
 
 	for i in {1..5}; do
@@ -36,7 +36,7 @@ for mode in classic native ; do
 		curl -s http://localhost:8080
 	done
 
-	curl -s http://localhost:8080/actuator/prometheus?debug=openmetrics > $dir/02-openmetrics-$mode.txt
+	curl -s -H 'Accept: application/openmetrics-text' http://localhost:8080/actuator/prometheus > $dir/02-openmetrics-$mode.txt
 	echo "Metrics written to $dir/02-openmetrics-$mode.txt"
 
 	kill $pid
