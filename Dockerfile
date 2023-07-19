@@ -1,5 +1,7 @@
 FROM openjdk:17
 
+EXPOSE 8080
+
 RUN microdnf install git findutils vim curl
 
 WORKDIR /tmp
@@ -21,3 +23,12 @@ WORKDIR /tmp
 RUN git clone https://github.com/fstab/micrometer-registry-prometheus_native-example.git
 WORKDIR /tmp/micrometer-registry-prometheus_native-example
 RUN ./gradlew build
+
+WORKDIR /tmp
+
+RUN curl -sOL https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v1.28.0/opentelemetry-javaagent.jar
+
+ENV OTEL_TRACES_EXPORTER=none
+ENV OTEL_METRICS_EXPORTER=none
+ENV OTEL_LOGS_EXPORTER=none
+CMD java -javaagent:/tmp/opentelemetry-javaagent.jar -jar /tmp/micrometer-registry-prometheus_native-example/build/libs/micrometer-registry-prometheus_native-example-0.0.1-SNAPSHOT.jar
