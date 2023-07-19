@@ -5,4 +5,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'micrometer-prometheus-native-example'
+rootProject.name = 'micrometer-registry-prometheus_native-example'

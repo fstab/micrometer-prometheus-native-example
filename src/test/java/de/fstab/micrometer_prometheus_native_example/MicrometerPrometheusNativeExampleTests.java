@@ -1,10 +1,10 @@
-package de.fstab.prometheus_new_demo;
+package de.fstab.micrometer_prometheus_native_example;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MicrometerPrometheusExampleAppTests {
+class MicrometerPrometheusNativeExampleTests {
 
 	@Test
 	void contextLoads() {

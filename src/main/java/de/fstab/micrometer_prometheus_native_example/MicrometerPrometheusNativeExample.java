@@ -1,4 +1,4 @@
-package de.fstab.prometheus_new_demo;
+package de.fstab.micrometer_prometheus_native_example;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.boot.SpringApplication;
@@ -10,17 +10,17 @@ import java.util.Random;
 
 @SpringBootApplication
 @RestController
-public class MicrometerPrometheusExampleApp {
+public class MicrometerPrometheusNativeExample {
 
 	private final Random random = new Random(0);
 	private final MeterRegistry registry;
 
-	public MicrometerPrometheusExampleApp(MeterRegistry registry) {
+	public MicrometerPrometheusNativeExample(MeterRegistry registry) {
 		this.registry = registry;
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicrometerPrometheusExampleApp.class, args);
+		SpringApplication.run(MicrometerPrometheusNativeExample.class, args);
 	}
 
 	@GetMapping("/")
