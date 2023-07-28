@@ -45,6 +45,12 @@ Run the example application as usual:
 java -jar ./build/libs/micrometer-registry-prometheus_native-example-0.0.1-SNAPSHOT.jar
 ```
 
+Or, if you have built the Docker image above:
+
+```shell
+docker run --rm -ti -p 8080:8080 micrometer-prometheus_native-example
+```
+
 Generate some traffic:
 
 ```shell
